@@ -9,17 +9,20 @@ st.set_page_config(
 st.title("🌾 AI Crop Recommendation System")
 
 st.markdown("""
-# Welcome 👋
+## Welcome 👋
 
-This application recommends the best crop based on:
+This application uses **Machine Learning** to recommend the most suitable crop
+based on soil nutrients and environmental conditions.
 
-- Nitrogen (N)
-- Phosphorus (P)
-- Potassium (K)
-- Temperature
-- Humidity
-- pH
-- Rainfall
+### 📌 Features
 
-👈 Use the sidebar to navigate through the application.
+- 🏠 Home
+- 📊 Dataset Analysis
+- 🌾 Crop Prediction
+- 📈 Model Performance
+- ℹ️ About Project
+
+👈 Use the **left sidebar** to navigate between pages.
 """)
+
+st.success("Select any page from the sidebar to continue.")
