@@ -1,34 +1,48 @@
 import streamlit as st
 
-st.set_page_config(page_title="Home", page_icon="🏠")
+st.set_page_config(
+    page_title="Home",
+    page_icon="🏠",
+    layout="wide"
+)
 
-st.title("🏠 Home")
+st.title("🏠 AI Crop Recommendation System")
 
 st.markdown("""
-# 🌾 Welcome to AI Crop Recommendation System
+# Welcome 👋
 
-This application uses Machine Learning to recommend the best crop
-based on soil nutrients and environmental conditions.
+Welcome to the **AI Crop Recommendation System**.
 
-## Features
+This application helps farmers and agricultural professionals choose the most suitable crop based on:
 
-✅ Crop Prediction
-
-✅ Dataset Analysis
-
-✅ Model Performance
-
-✅ Easy-to-use Dashboard
+- 🌱 Nitrogen (N)
+- 🌱 Phosphorus (P)
+- 🌱 Potassium (K)
+- 🌡 Temperature
+- 💧 Humidity
+- ⚗ pH Value
+- 🌧 Rainfall
 
 ---
 
-### 📌 Available Pages
+## 📌 Available Pages
 
 - 🏠 Home
 - 📊 Dataset Analysis
-- 🤖 Crop Prediction
+- 🌾 Crop Prediction
 - 📈 Model Performance
 - ℹ️ About Project
 
-👈 Use the left sidebar to navigate through the application.
+---
+
+### 🚀 How to Use
+
+1. Open **Crop Prediction** page.
+2. Enter soil and weather values.
+3. Click **Predict Crop**.
+4. View the recommended crop.
+
+👈 Use the left sidebar to navigate between pages.
 """)
+
+st.success("Ready to explore the application!")
