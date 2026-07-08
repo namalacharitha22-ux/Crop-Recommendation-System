@@ -1,6 +1,6 @@
 import streamlit as st
 
-# ---------------- Page Configuration ----------------
+# ---------------- Page Config ----------------
 st.set_page_config(
     page_title="AI Crop Recommendation System",
     page_icon="🌾",
@@ -12,40 +12,44 @@ st.markdown("""
 <style>
 
 [data-testid="stAppViewContainer"]{
-    background: linear-gradient(to right, #eef2ff, #ffffff);
+    background: linear-gradient(to right,#eef2ff,#ffffff);
 }
 
 [data-testid="stSidebar"]{
-    background: #1e293b;
+    background:#1e293b;
 }
 
 [data-testid="stSidebar"] *{
-    color: white;
+    color:white;
 }
 
-h1, h2, h3{
-    color: #0f172a;
+h1,h2,h3{
+    color:#0f172a !important;
 }
 
-.stButton > button{
-    width: 100%;
-    background: #16a34a;
-    color: white;
-    border-radius: 10px;
-    height: 3em;
-    font-size: 18px;
-    font-weight: bold;
+p,li,span,label,div{
+    color:#111827 !important;
 }
 
-.stButton > button:hover{
-    background: #15803d;
+.stButton>button{
+    width:100%;
+    background:#16a34a;
+    color:white !important;
+    border-radius:10px;
+    height:3em;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.stButton>button:hover{
+    background:#15803d;
 }
 
 div[data-testid="metric-container"]{
-    background: white;
-    border-radius: 12px;
-    padding: 15px;
-    box-shadow: 0px 3px 10px rgba(0,0,0,0.1);
+    background:white;
+    border-radius:12px;
+    padding:15px;
+    box-shadow:0px 3px 10px rgba(0,0,0,.1);
 }
 
 </style>
@@ -57,22 +61,25 @@ st.sidebar.title("🌾 AI Crop Recommendation")
 # ---------------- Home Page ----------------
 st.title("🌾 AI Crop Recommendation System")
 
+st.header("👋 Welcome")
+
+st.write(
+    "This application uses **Machine Learning** to recommend the most suitable crop "
+    "based on soil nutrients and environmental conditions."
+)
+
+st.markdown("---")
+
+st.header("📌 Features")
+
 st.markdown("""
-## 👋 Welcome
-
-This application uses **Machine Learning** to recommend the most suitable crop based on soil nutrients and environmental conditions.
-
----
-
-## 📌 Features
-
 - 🏠 Home
 - 📊 Dataset Analysis
-- 🌾 Crop Prediction
+- 🌱 Crop Prediction
 - 📈 Model Performance
 - ℹ️ About Project
-
-👉 Use the **left sidebar** to navigate between pages.
 """)
+
+st.info("👉 Use the left sidebar to navigate between pages.")
 
 st.success("Select any page from the sidebar to continue.")
