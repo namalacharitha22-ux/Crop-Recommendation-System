@@ -1,96 +1,132 @@
 import streamlit as st
 
-# ---------------- Page Config ----------------
+# ---------------- PAGE CONFIG ----------------
 st.set_page_config(
     page_title="AI Crop Recommendation System",
     page_icon="🌾",
     layout="wide"
 )
 
-# ---------------- Custom CSS ----------------
+# ---------------- CUSTOM CSS ----------------
 st.markdown("""
 <style>
 
+/* Main Background */
 [data-testid="stAppViewContainer"]{
-    background: linear-gradient(to right,#eef2ff,#ffffff);
+    background: linear-gradient(135deg,#f4fff6,#ffffff);
 }
 
+/* Header */
+h1{
+    color:#1b5e20;
+    font-weight:700;
+}
+
+h2,h3{
+    color:#2e7d32;
+}
+
+/* Sidebar */
 [data-testid="stSidebar"]{
-    background:#1e293b;
+    background:#ffffff;
+    border-right:2px solid #e8f5e9;
 }
 
+/* Sidebar Title */
+[data-testid="stSidebar"] h1{
+    color:#1b5e20 !important;
+}
+
+/* Sidebar Text */
 [data-testid="stSidebar"] *{
-    color:white;
-}
-section[data-testid="stSidebar"] a {
-    color: white !important;
+    color:#2e7d32 !important;
 }
 
-section[data-testid="stSidebar"] .stPageLink {
-    color: white !important;
-}
-
-section[data-testid="stSidebar"] button {
-    color: white !important;
-}
-
-h1,h2,h3{
-    color:#0f172a !important;
-}
-
-p,li,span,label,div{
-    color:#111827 !important;
-}
-
+/* Buttons */
 .stButton>button{
     width:100%;
-    background:#16a34a;
-    color:white !important;
+    background:#2e7d32;
+    color:white;
+    border:none;
     border-radius:10px;
-    height:3em;
+    padding:12px;
     font-size:18px;
     font-weight:bold;
 }
 
 .stButton>button:hover{
-    background:#15803d;
+    background:#1b5e20;
 }
 
+/* Cards */
 div[data-testid="metric-container"]{
     background:white;
+    border:1px solid #c8e6c9;
+    border-radius:15px;
+    padding:18px;
+    box-shadow:0px 4px 15px rgba(0,0,0,0.08);
+}
+
+/* Info Box */
+[data-testid="stAlert"]{
     border-radius:12px;
-    padding:15px;
-    box-shadow:0px 3px 10px rgba(0,0,0,.1);
+}
+
+/* Horizontal Line */
+hr{
+    border:1px solid #c8e6c9;
 }
 
 </style>
 """, unsafe_allow_html=True)
 
-# ---------------- Sidebar ----------------
+# ---------------- SIDEBAR ----------------
 st.sidebar.title("🌾 AI Crop Recommendation")
+st.sidebar.success("Machine Learning Based Crop Prediction")
 
-# ---------------- Home Page ----------------
+# ---------------- HOME ----------------
 st.title("🌾 AI Crop Recommendation System")
 
-st.header("👋 Welcome")
-
-st.write(
-    "This application uses **Machine Learning** to recommend the most suitable crop "
-    "based on soil nutrients and environmental conditions."
-)
-
-st.markdown("---")
-
-st.header("📌 Features")
-
 st.markdown("""
-- 🏠 Home
-- 📊 Dataset Analysis
-- 🌱 Crop Prediction
-- 📈 Model Performance
-- ℹ️ About Project
+### 🌱 Welcome
+
+This application uses **Machine Learning** to recommend the most suitable crop based on:
+
+- 🌿 Soil Nutrients
+- 🌡 Temperature
+- 💧 Humidity
+- 🌧 Rainfall
+- 🧪 Soil pH
+
+---
+
+### 🚀 Features
+
+✅ Dataset Analysis
+
+✅ Crop Prediction
+
+✅ Model Performance
+
+✅ About Project
+
+---
+
+### 📌 Objective
+
+To help farmers choose the best crop based on soil and environmental conditions using Artificial Intelligence.
+
 """)
 
-st.info("👉 Use the left sidebar to navigate between pages.")
+col1,col2,col3=st.columns(3)
 
-st.success("Select any page from the sidebar to continue.")
+with col1:
+    st.metric("Dataset","2200 Records")
+
+with col2:
+    st.metric("Features","7")
+
+with col3:
+    st.metric("Algorithm","Random Forest")
+
+st.success("👈 Select any page from the sidebar to continue.")
