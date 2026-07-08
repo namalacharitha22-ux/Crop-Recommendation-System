@@ -1,27 +1,29 @@
 import streamlit as st
 
 # ---------------- PAGE CONFIG ---------------- #
+
 st.set_page_config(
     page_title="AI Crop Recommendation System",
     page_icon="🌾",
     layout="wide"
 )
 
+# Sidebar Title
+st.sidebar.title("🌾 Crop AI")
+
 # ---------------- CSS ---------------- #
+
 st.markdown("""
 <style>
 
-/* Hide Streamlit Menu */
 #MainMenu {visibility:hidden;}
 footer {visibility:hidden;}
 header {visibility:hidden;}
 
-/* Main Background */
 [data-testid="stAppViewContainer"]{
     background:#f4f8f4;
 }
 
-/* Sidebar */
 [data-testid="stSidebar"]{
     background:white;
     border-right:1px solid #d9e4d9;
@@ -31,67 +33,18 @@ header {visibility:hidden;}
     color:#222222;
 }
 
-/* Header Card */
-.header{
-    background:linear-gradient(90deg,#2e7d32,#43a047);
-    color:white;
-    padding:30px;
-    border-radius:20px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.15);
+h1,h2,h3{
+    color:#1b5e20;
 }
 
-.header h1{
-    color:white;
-    font-size:42px;
-    margin-bottom:5px;
-}
-
-.header p{
-    color:white;
-    font-size:18px;
-}
-
-/* KPI Cards */
-.card{
-    background:white;
-    padding:25px;
-    border-radius:18px;
-    box-shadow:0px 6px 18px rgba(0,0,0,.08);
-    text-align:center;
-    transition:0.3s;
-}
-
-.card:hover{
-    transform:translateY(-5px);
-    box-shadow:0px 10px 25px rgba(0,0,0,.15);
-}
-
-.card h2{
-    color:#2e7d32;
-    margin:0;
-}
-
-.card p{
-    color:#666;
-    font-size:16px;
-}
-
-/* Feature Box */
-.feature{
-    background:white;
-    padding:25px;
-    border-radius:18px;
-    box-shadow:0px 6px 18px rgba(0,0,0,.08);
-}
-
-/* Buttons */
 .stButton>button{
     width:100%;
     background:#2e7d32;
     color:white;
     border-radius:10px;
-    height:3em;
     border:none;
+    height:3em;
+    font-size:18px;
     font-weight:bold;
 }
 
@@ -100,107 +53,107 @@ header {visibility:hidden;}
     color:white;
 }
 
-/* Metrics */
 div[data-testid="metric-container"]{
     background:white;
+    border:1px solid #e0e0e0;
     border-radius:15px;
     padding:15px;
-    box-shadow:0px 5px 15px rgba(0,0,0,.08);
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+
+.hero{
+background:linear-gradient(90deg,#2e7d32,#43a047);
+padding:35px;
+border-radius:18px;
+text-align:center;
+color:white;
+box-shadow:0 8px 20px rgba(0,0,0,.15);
+margin-bottom:20px;
+}
+
+.hero h1{
+color:white;
+font-size:42px;
+margin-bottom:10px;
+}
+
+.hero p{
+color:white;
+font-size:18px;
 }
 
 </style>
 """, unsafe_allow_html=True)
 
-# ---------------- HEADER ---------------- #
+# ---------------- HERO ---------------- #
 
 st.markdown("""
-<div class="header">
+<div class="hero">
+
 <h1>🌾 AI Crop Recommendation System</h1>
-<p>Machine Learning Based Smart Agriculture Recommendation Platform</p>
+
+<p>
+Machine Learning Based Smart Agriculture Recommendation Platform
+</p>
+
 </div>
 """, unsafe_allow_html=True)
 
-st.write("")
+# ---------------- KPI ---------------- #
 
-# ---------------- KPI CARDS ---------------- #
+st.subheader("📊 Dashboard Overview")
 
 c1,c2,c3,c4=st.columns(4)
 
 with c1:
-    st.markdown("""
-    <div class="card">
-    <h2>🌱 Soil</h2>
-    <p>NPK Analysis</p>
-    </div>
-    """,unsafe_allow_html=True)
+    st.metric("🌱 Soil Inputs","7")
 
 with c2:
-    st.markdown("""
-    <div class="card">
-    <h2>🌦 Weather</h2>
-    <p>Climate Prediction</p>
-    </div>
-    """,unsafe_allow_html=True)
+    st.metric("🤖 ML Model","Random Forest")
 
 with c3:
-    st.markdown("""
-    <div class="card">
-    <h2>🤖 AI Model</h2>
-    <p>Crop Recommendation</p>
-    </div>
-    """,unsafe_allow_html=True)
+    st.metric("📈 Accuracy","98%")
 
 with c4:
-    st.markdown("""
-    <div class="card">
-    <h2>📈 Accuracy</h2>
-    <p>High Performance</p>
-    </div>
-    """,unsafe_allow_html=True)
+    st.metric("🌾 Output","Best Crop")
 
 st.write("")
 
-# ---------------- PROJECT OVERVIEW ---------------- #
+# ---------------- INPUT PARAMETERS ---------------- #
 
-st.markdown("""
-<div class="feature">
+st.subheader("🌱 Input Parameters")
 
-## 📋 Project Overview
+a,b,c=st.columns(3)
 
-This application recommends the **best suitable crop** using **Machine Learning**
-based on:
+with a:
+    st.success("🌱 Nitrogen")
+    st.success("🌾 Phosphorus")
+    st.success("🌿 Potassium")
 
-- 🌱 Nitrogen
-- 🌾 Phosphorus
-- 🌿 Potassium
-- 🌡 Temperature
-- 💧 Humidity
-- 🌧 Rainfall
-- ⚗ pH Value
+with b:
+    st.success("🌡 Temperature")
+    st.success("💧 Humidity")
 
-</div>
-""",unsafe_allow_html=True)
+with c:
+    st.success("🌧 Rainfall")
+    st.success("🧪 pH Value")
 
 st.write("")
 
 # ---------------- FEATURES ---------------- #
 
-st.markdown("""
-<div class="feature">
+st.subheader("🚀 Dashboard Features")
 
-## 🚀 Dashboard Features
+x,y=st.columns(2)
 
-✅ Home
+with x:
+    st.info("📊 Dataset Analysis")
+    st.info("🌾 Crop Prediction")
 
-✅ Dataset Analysis
+with y:
+    st.info("📈 Model Performance")
+    st.info("ℹ️ About Project")
 
-✅ Crop Prediction
+st.write("")
 
-✅ Model Performance
-
-✅ About Project
-
-</div>
-""",unsafe_allow_html=True)
-
-st.success("👈 Select any page from the sidebar to continue.")
+st.success("👈 Use the left sidebar to explore all dashboard pages.")
