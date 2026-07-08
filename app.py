@@ -22,6 +22,17 @@ st.markdown("""
 [data-testid="stSidebar"] *{
     color:white;
 }
+section[data-testid="stSidebar"] a {
+    color: white !important;
+}
+
+section[data-testid="stSidebar"] .stPageLink {
+    color: white !important;
+}
+
+section[data-testid="stSidebar"] button {
+    color: white !important;
+}
 
 h1,h2,h3{
     color:#0f172a !important;
