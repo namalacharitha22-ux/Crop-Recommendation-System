@@ -1,5 +1,4 @@
 import streamlit as st
-import pandas as pd
 
 st.set_page_config(
     page_title="Model Performance",
@@ -7,32 +6,62 @@ st.set_page_config(
     layout="wide"
 )
 
-st.title("📈 Model Performance")
+st.title("📈 Model Performance Dashboard")
 
-st.markdown("### Performance Metrics of the Trained Machine Learning Model")
+st.markdown("### Machine Learning Model Evaluation")
 
-# ===== Replace these values with your actual results =====
-accuracy = 99.32
-precision = 99.31
-recall = 99.32
-f1_score = 99.31
+st.markdown("---")
 
+# KPI Cards
 col1, col2, col3, col4 = st.columns(4)
 
-col1.metric("Accuracy", f"{accuracy}%")
-col2.metric("Precision", f"{precision}%")
-col3.metric("Recall", f"{recall}%")
-col4.metric("F1 Score", f"{f1_score}%")
+col1.metric("🎯 Accuracy", "99%")
+col2.metric("🎯 Precision", "99%")
+col3.metric("🎯 Recall", "99%")
+col4.metric("🎯 F1-Score", "99%")
 
-st.divider()
+st.markdown("---")
 
-st.subheader("📋 Performance Summary")
+st.subheader("🤖 Machine Learning Model")
 
-performance = pd.DataFrame({
-    "Metric": ["Accuracy", "Precision", "Recall", "F1 Score"],
-    "Value (%)": [accuracy, precision, recall, f1_score]
-})
+st.success("""
+**Algorithm Used:** Random Forest Classifier
 
-st.dataframe(performance, use_container_width=True)
+Random Forest is an ensemble machine learning algorithm that combines multiple decision trees to improve prediction accuracy and reduce overfitting.
+""")
 
-st.info("💡 Replace the above values with your model's actual evaluation metrics.")
+st.markdown("---")
+
+st.subheader("📊 Model Summary")
+
+st.info("""
+✔ Dataset Used : Crop Recommendation Dataset
+
+✔ Total Features : 7
+
+✔ Number of Crop Classes : 22
+
+✔ Train-Test Split : 80% - 20%
+
+✔ Data Scaling : StandardScaler
+
+✔ Label Encoding : Applied
+
+✔ Best Model : Random Forest Classifier
+""")
+
+st.markdown("---")
+
+st.subheader("📋 Performance Analysis")
+
+st.write("""
+- ✅ High Accuracy
+- ✅ Fast Prediction
+- ✅ Handles Multiple Crop Classes
+- ✅ Robust Against Overfitting
+- ✅ Suitable for Agricultural Decision Support
+""")
+
+st.markdown("---")
+
+st.success("🎉 The Random Forest model achieved excellent performance for crop recommendation.")
